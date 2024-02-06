@@ -1,0 +1,190 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: auto;
+    width: 80%;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+body>div {
+    margin-bottom: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+}
+
+.elem {
+    background-color: #3498db;
+    color: #ffffff;
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    font-weight: bold;
+    font-size: 1.25rem;
+    /* Igazítás */
+    line-height: 100px;
+    text-align: center;
+}
+
+.flexbox {
+    background-color: rgba(0, 255, 0, 0.1);
+}
+
+hr {
+    border: 5px solid black;
+}
+
+/* -------------- Flexbox -------------- */
+
+/* 1. Dinamikus méret */
+
+/* .elem {
+    display: inline-block;
+} */
+
+/* gap: rés, kihagyás, hézag */
+/* gap: calc(100% / 9); */
+.flexbox {
+    display: flex;
+}
+
+.b1 {
+    gap: 3px;
+}
+
+/* 2. "Vízszintes" igazítás */
+/* center */
+/* start, end ~ flex-start, flex-end */
+/* space-between: szélsők két oldalra, egyenlő kihagyások */
+/* space-around */
+/* space-evenly */
+.b2 {
+    justify-content: space-evenly;
+}
+
+/* 3. "Függőleges" igazítás */
+/* start, center, end */
+.b3 {
+    height: 300px;
+    justify-content: center;
+    align-items: center;
+}
+
+/* .b3 .elem {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+/* 4. Igazítás iránya */
+/* row, row-reverse */
+/* column, column-reverse */
+.b4 {
+    flex-direction: column;
+    height: 400px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* 5. Tördelés */
+/* nowrap, wrap */
+/* wrap-reverse */
+.b5 {
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+
+
+/* --------------- Elemek --------------- */
+
+/* 6. Elemek sorrendje */
+.b6 .e2 {
+    order: 1;
+}
+
+.b6 .e3 {
+    order: 2;
+}
+
+.b6 .e1 {
+    order: 3;
+}
+
+/* 7. Elemek igazítása */
+/* Elem magasságok is flexibilisek! */
+.b7 {
+    height: 400px;
+}
+
+/* start, center, end, stretch */
+.b7 .elem {
+    height: auto;
+    align-self: start;
+}
+
+.b7 .e3 {
+    align-self: stretch;
+}
+
+.b7 .e6 {
+    align-self: center;
+}
+
+
+/* 8. Nyújtás */
+/* 1:2, maradék */
+.b8 .elem {
+    border: 2px solid black;
+}
+
+/* A kimaradó rész mekkora szeletét kapja meg? */
+.b8 .e1 {
+    flex-grow: 1;
+}
+
+.b8 .e2 {
+    flex-grow: 2;
+}
+
+
+/* 9. Zsugorítás */
+/* Nem zsugorodik, 1:2 arányban */
+.b9 div {
+    width: 200px;
+    border: 2px solid black;
+}
+
+/* Nem engedünk a 200px-ből! */
+.b9 .e1 {
+    flex-shrink: 0;
+}
+
+.b9 .e2 {
+    flex-shrink: 1;
+}
+
+.b9 .e3 {
+    /* flex-shrink: 20; */
+    flex-shrink: 2;
+}
+
+
+/* 10. Alapméret */
+/* Miben másabb a width-nél? */
+.b10 div {
+    border: 2px solid black;
+}
+
+.b10 {
+    flex-direction: column;
+}
+
+.b10 .e1 {
+    flex-basis: 200px;
+    /* width: 200px; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

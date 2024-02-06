@@ -1,0 +1,223 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    padding: 1em;
+}
+
+div {
+    width: 100px;
+    height: 40px;
+    background-color: bisque;
+    border: 1px solid black;
+    margin: 1em;
+    display: inline-block;
+}
+
+h2 {
+    margin: 1em auto;
+}
+
+hr {
+    border: 2px solid black;
+    margin: 1em auto;
+}
+
+img {
+    display: block;
+    margin: 1em;
+    width: 300px;
+    border: 4px solid black;
+    background-color: beige;
+    padding: 1em;
+}
+
+/* ------------------------------ */
+
+/* Forgatás 
+rotate
+pozitiv forg irany jobbra
+*/
+#d1 {
+    transform: rotate(20deg); /* egy szoget ker es jobbra elforgatas */
+}
+
+#d2:hover {
+
+    transform: rotate(-60deg); /* balra forgatas */
+    transition: transform 1s; /*nem minden tulajdosagra igaz*/
+    /* transition: 1s;  osszes tulajdonsagot animalja  */
+}
+ #d2:not(:hover) {
+    transform: rotate(0deg); 
+    transition: transform 0.25s; 
+} 
+
+/* terbeli forgatas ugy forog mint a gyros hus rotateY
+- rotateX pedig grill csirke 
+- rotateZ sima forgatas
+-tengelyes tukrozes 180deg 
+
+*/
+#d3:hover {
+    transform: rotateY(90deg);
+    transition: 1s;
+}
+
+#d3:not(:hover) {
+    transform: rotateY(0deg);
+    transition: 1s;
+}
+
+
+
+
+/* Nagyítás */
+
+
+#d4 {
+    transform: scale(0.25);
+    
+    
+}
+
+#d5:hover {
+    transform: scale(1.5);
+    transition: transform 1s;
+}
+
+#d5:not(:hover) {
+    transition: transform 1s;
+}
+
+#d6:hover {
+    transform: scaleY(50%);
+    transition: transform 1s;
+
+}
+
+#d6:not(:hover) {
+   
+    transition: transform 1s;
+}
+
+/* Eltolás */
+
+#d7:hover {
+    transform: translate(10px, 10px);
+    transition: transform 1s;
+}
+
+
+#d7:not(:hover) {
+    transition: transform 1s;
+
+}
+
+
+#d8:hover {
+    transform: translate(20px, -1em);
+}
+
+#d8:not(:hover) {
+    transition: 1s;
+
+}
+
+#d9:hover {
+
+    transform: translate(100%, 50%);
+    transition: 1s;
+}
+
+#d9:not(:hover) {
+    transition: 1s;
+
+}
+
+
+/* Középre igazítás! */
+
+#kozepre {
+    position: relative;
+}
+
+a {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+
+
+/* Ferdítés */
+
+#d10:hover {
+
+    transform: skew(-30deg);
+    transition: 1s;
+}
+
+#d10:not(:hover) {
+    transition: 1s;
+
+}
+
+#d11:hover {
+
+    transform: skew(30deg);
+    transition: 1s;
+}
+
+#d11:not(:hover) {
+    transition: 1s;
+
+}
+
+
+
+
+
+/* Középpont helye? */
+
+
+#d12:hover {
+
+    transform: scale(1.5);
+    transition: 1s;
+    transform-origin: top center;
+}
+
+#d12:not(:hover) {
+    transition: 1s;
+
+}
+/* 
+#d13:hover {
+
+    transform: rotate(-30deg);
+    transition: 1s;
+    transform-origin: right center;
+}
+
+#d13:not(:hover) {
+    transition: 1s;
+
+} */
+
+
+#d13:hover {
+
+    transform: rotate(-30deg);
+    transition: 1s;
+    transform-origin: 10%, 50%;
+}
+
+#d13:not(:hover) {
+    transition: 1s;
+
+}
