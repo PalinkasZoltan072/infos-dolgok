@@ -1,0 +1,252 @@
+div div {
+    height: 50px;
+    width: 100px;
+    background-color: lightgray;
+}
+
+div.megjelenes {
+    background-color: darkgreen;
+}
+
+div.jobbra-balra {
+    margin: 1em 0;
+    background-color: yellow;
+}
+
+button.remeg {
+    padding: 0.5em;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+/* .t2:first-of-type {
+    margin-left: 10vw;
+} */
+
+.t2 {
+    background-color: darkgray;
+}
+
+.forgo {
+    width: fit-content;
+    height: auto;
+    border: 2px solid black;
+    background-color: white;
+}
+
+img {
+    height: 300px;
+    display: block; 
+    margin: auto;
+}
+
+footer {
+    height: 10vw;
+}
+
+/* ------------------------------------------ */
+
+/* 1. Megjelenő doboz */
+/* Legyen látható 3 másodperc alatt! */
+/* .megjelenes {
+    opacity: 0;
+}
+
+.megjelenes:hover {
+    opacity: 100%;
+    transition: opacity 3s;
+} */
+
+.megjelenes {
+    animation-name: lathato;
+    animation-duration: 3s;
+}
+
+@keyframes lathato {
+    from {
+        opacity: 0%;
+    }
+    to {
+        opacity: 100%;
+    }
+}
+
+/* 2. Jobbra-balra közlekedő dobozok */
+/* Mozogjanak 500 pixelt, 3 mp alatt, fél mp késve indulva, 3-szor */
+.jobbra-balra {
+    /* animation-name: jobbra-balra;
+    animation-duration: 3s;
+    animation-iteration-count: 3;
+    animation-delay: 0.5s; */
+    animation: jobbra-balra 3s 0.5s 3;
+}
+
+/* állandó sebesség */
+#d0 {
+    animation-timing-function: linear;
+}
+
+/* Alapértelmezett */
+#d1 {
+    animation-timing-function: ease;
+}
+
+/* folyamatosan gyorsulo */
+#d2 {
+    animation-timing-function: ease-in;
+}
+
+/* folyamatosan lassulo */
+#d3 {
+    animation-timing-function: ease-out;
+}
+
+#d4 {
+    animation-timing-function: ease-in-out;
+}
+
+/* #d3:hover {
+    animation-play-state: paused;
+} */
+
+/* @keyframes jobbra-balra {
+    0% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(500px);
+    }
+    100% {
+        transform: translateX(0px);
+    }
+} */
+
+@keyframes jobbra-balra {
+    0%, 100% {
+        transform: translateX(0px);
+    }
+    50% {
+        transform: translateX(500px);
+    }
+}
+
+/* 3. Remegő gomb */
+/* 5 fok mértékben remegjen, egy mozdulatsor negyed mp */
+/* Álljon meg ha rámutatunk */
+.remeg {
+    animation: remego-gomb infinite 0.25s;
+}
+
+.remeg:hover {
+    animation-play-state: paused;
+}
+
+/* @keyframes remego-gomb {
+    0% {
+        transform: rotate(0deg);
+    }
+    25% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(0deg);
+    }
+    75% {
+        transform: rotate(-5deg);
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+} */
+
+@keyframes remego-gomb {
+    0%, 100% {
+        transform: rotate(5deg);
+    }
+    50% {
+        transform: rotate(-5deg);
+    }
+}
+
+/* 4. Töltés */
+/* 10px vastagságú legyen a körgyűrű */
+/* Egy fordulat 4 mp */
+.toltes {
+    height: 100px;
+    border-radius: 50%;
+    border: 10px solid white;
+    border-top: 10px solid lightgreen;
+    animation: toltes 4s infinite ease-out;
+}
+
+@keyframes toltes {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* 5. Töltés (pontok) */
+/* Pontok mérete: 10px */
+/* Pontok várakozása: idők harmadai */
+.t2-szulo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    gap: 0.25em;
+    background-color: white;
+}
+
+.t2 {
+    width: 10px;
+    height: 10px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    animation: pontok 1.5s infinite;
+}
+
+.t2:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.t2:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes pontok {
+    0%, 100% {
+        transform: scale(1) translateY(0%);
+    }
+    25% {
+        transform: scale(1.2) translateY(-50%);
+    }
+}
+
+
+/* 6. Forgó */
+/* Forgó magassága 300px */
+/* Mindegyik kép ugyanannyi ideig látszik: animáció 20%-a */
+.forgo {
+    height: 300px;
+    overflow: hidden;
+}
+
+.forgo img {
+    animation: gyumi 5s infinite;
+}
+
+@keyframes gyumi {
+    0%, 10%, 90%, 100% {
+        transform: translateY(0);
+    }
+    20%, 30%, 70%, 80% {
+        transform: translateY(-300px);
+    }
+    40%, 60% {
+        transform: translateY(-600px);
+    }
+}

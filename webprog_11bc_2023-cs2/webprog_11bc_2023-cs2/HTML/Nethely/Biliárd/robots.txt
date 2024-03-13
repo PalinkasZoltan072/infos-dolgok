@@ -1,5 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /images/
-
-Sitemap: http://ckikwebprog.webtelek.hu/sitemap.xml
